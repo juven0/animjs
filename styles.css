@@ -2,36 +2,28 @@
     width: 100%;
     height: 100vh;
     background-color: aqua;
+    position: relative;
+}
+.parallax-section {
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-/* **************************************************************** */
-/* classe de l'element a observer */
-.banner{
-    width: 100%;
-    height: 60vh;
-    display: flex;
-
-    
+.parallax1 {
+    left: 0;
+    background-image: url('../assets/img1.png');
+    background-attachment: fixed;
+    background-position: center;
 }
 
-/* rende la classe visible */
-.isObserve{
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+.parallax2 {
+    right: 0;
+    background-image: url('../assets/img2.jpg');
+    background-attachment: fixed;
+    background-position: center;
 }
-.banner .image{
-    width: 50%;
-    height: 100%;
-    /* cette partie ci-dessou fait fonctionner l'annimation */
-    transition: 1s;  /* a changer pour modifier la dure lde l'animation */
-    opacity: 0;
-    transform: translateY(40px); /* a changer selon votre gout pour l'animation */
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-}
-.banner .card{
+.parallax-section .card{
     font-family: arial;
     color: white;
     font-size: 1.3rem;
@@ -43,13 +35,13 @@
     align-items: center;
     justify-content: center;
 }
-.banner .card1{
+.parallax-section .card1{
     background-color: #ca8787;
 }
-.banner .card2{
+.parallax-section .card2{
     background-color: #7f595b;
 }
-.banner .card button{
+.parallax-section .card button{
     width: 50%;
     height: 40px;
     border-radius: 20px;
@@ -58,43 +50,74 @@
     transform: translateY(40px);
     background: linear-gradient( to right, #ffd581, #f9c861, #fae080, #e9a128, #fdd57e);
 }
-.banner .image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
-/* pour mobile */
-
-@media screen and (max-width: 768px) {
-    .banner{
-        flex-direction: column;
-        height: 100vh;
-    }
-    .banner .image{
+@media screen and (min-width: 984px){
+    .parallax-container {
+        display: flex;
+        position: relative;
+        flex-direction: row;
         width: 100%;
-        height: 500%;
-
+        height: 60vh; /* Ajustez la hauteur selon vos besoins */
+        overflow: hidden;
     }
-    .banner .card{
-        font-size: 1rem;
-    }
-    .banner .card1{
-        left: center;
-        bottom: 0;
-    }
-    .banner .card2{
+    .parallax-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
         top: 0;
+        width: 50%; 
+        height: 100%;
     }
-
-}
-
-@media screen and (min-width: 1200px){
-    .banner .card1{
+    .parallax-section .card1{
         right: 0;
     }
-    .banner .card2{
+    .parallax-section .card2{
         left: 0;
     }
 }
-/* ************************************************************** */
+
+
+@media screen and (max-width: 984px) {
+    .parallax-container {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        width: 100%;
+        height: 100vh; /* Ajustez la hauteur selon vos besoins */
+        overflow: hidden;
+    }
+    .parallax-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%; 
+        height: 50%;
+        background-attachment:scroll;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: .5s;
+    }
+    .parallax-section {
+        height: 100% !important; /* Affichez les sections à plein écran */
+    }
+    .parallax-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .parallax-section .card{
+        font-size: 1rem;
+    }
+    .parallax-section .card1{
+        left: center;
+        bottom: 0;
+    }
+    .parallax-section .card2{
+        top: 0;
+    }
+    .isObserve{
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+}

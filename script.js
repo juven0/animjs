@@ -9,5 +9,5 @@ const observer  = new IntersectionObserver((entries)=>{
     threshold: .4
 })
 
-observer.observe(document.querySelector('.image1'))
-observer.observe(document.querySelector('.image2'))
+observer.observe(document.querySelector('.parallax1'))
+observer.observe(document.querySelector('.parallax2'))
