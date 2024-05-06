@@ -1,0 +1,100 @@
+.div1{
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
+}
+
+/* **************************************************************** */
+/* classe de l'element a observer */
+.banner{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+
+    
+}
+
+/* rende la classe visible */
+.isObserve{
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+.banner .image{
+    width: 50%;
+    height: 100%;
+    /* cette partie ci-dessou fait fonctionner l'annimation */
+    transition: 1s;  /* a changer pour modifier la dure lde l'animation */
+    opacity: 0;
+    transform: translateY(40px); /* a changer selon votre gout pour l'animation */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.banner .card{
+    font-family: arial;
+    color: white;
+    font-size: 1.3rem;
+    position: absolute;
+    width: 50%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.banner .card1{
+    background-color: #ca8787;
+}
+.banner .card2{
+    background-color: #7f595b;
+}
+.banner .card button{
+    width: 50%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    outline: node;
+    transform: translateY(40px);
+    background: linear-gradient( to right, #ffd581, #f9c861, #fae080, #e9a128, #fdd57e);
+}
+.banner .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* pour mobile */
+
+@media screen and (max-width: 768px) {
+    .banner{
+        flex-direction: column;
+        height: 100vh;
+    }
+    .banner .image{
+        width: 100%;
+        height: 500%;
+
+    }
+    .banner .card{
+        font-size: 1rem;
+    }
+    .banner .card1{
+        left: center;
+        bottom: 0;
+    }
+    .banner .card2{
+        top: 0;
+    }
+
+}
+
+@media screen and (min-width: 1200px){
+    .banner .card1{
+        right: 0;
+    }
+    .banner .card2{
+        left: 0;
+    }
+}
+/* ************************************************************** */
